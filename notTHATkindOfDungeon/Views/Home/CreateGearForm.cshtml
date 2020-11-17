@@ -1,0 +1,57 @@
+﻿@model notTHATkindOfDungeon.Models.CreateGear;
+@{
+    ViewData["Title"] = "Create Gear Form";
+}
+
+<h2>Create Gear Form</h2>
+
+<body>
+    <form asp-action="AddItem" method="post">
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label asp-for="ItemName">Item Name:</label>
+            <input asp-for="ItemName" type="text" />
+        </p>
+        <p>
+            <label asp-for="ItemDescription">Item Description:</label>
+            <textarea asp-for="ItemDescription" rows="4" cols="60">
+            Enter item description here.</textarea>
+        </p>
+        <p>
+            <label asp-for="ScoreRequirement">Score Requirement:</label>
+            <input asp-for="ScoreRequirement" type="text" /> (This is the minimum score a player must have to be able to see/use this item.)
+        </p>
+        <p>
+            <label asp-for="ItemType">Item Type:</label>
+            <select asp-for="ItemType">
+                <option value="">Choose an option</option>
+                <option value="weapon">Weapon</option>
+                <option value="armor">Armor</option>
+                <option value="healing">Healing</option>
+                <option value="bagUpgrade">Bag Upgrade</option>
+            </select>
+        </p>
+        <p>
+
+            <label asp-for="Attack" >Attack Increase:</label>
+            <input asp-for="Attack" type="text" />
+        </p>
+        <p>
+            <label asp-for="Defense">Defense Increase:</label>
+            <input asp-for="Defense" type="text" />
+        </p>
+        <p>
+            <label asp-for="HealingPower">Healing Power:</label>
+            <input asp-for="HealingPower" type="text" />
+        </p>
+        <p>
+            <label asp-for="InventoryIncrease">Inventory Increase:</label>
+            <input asp-for="InventoryIncrease" type="text" />
+        </p>
+
+        <button type="submit">Submit New Item</button>
+
+    </form>
+
+
+</body>

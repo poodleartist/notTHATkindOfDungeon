@@ -1,0 +1,35 @@
+﻿@model IEnumerable<notTHATkindOfDungeon.Models.CreateGear>
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<h2>Shop, Trading Post, Whatever it's called...Here's where you stock up on gear!</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Score Requirement</th>
+            <th>Item Type</th>
+            <th>Atack</th>
+            <th>Defense</th>
+            <th>Healing Power</th>
+            <th>Inventory Increase</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(notTHATkindOfDungeon.Models.CreateGear g in Model){ 
+        <tr>
+            <td>@g.ItemName</td>
+            <td>@g.ItemDescription</td>
+            <td>@g.ScoreRequirement</td>
+            <td>@g.ItemType</td>
+            <td>@g.Attack</td>
+            <td>@g.Defense</td>
+            <td>@g.HealingPower</td>
+            <td>@g.InventoryIncrease</td>
+        </tr>}
+            
+    </tbody>
+</table>

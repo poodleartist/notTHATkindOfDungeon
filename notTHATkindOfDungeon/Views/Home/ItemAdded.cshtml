@@ -1,0 +1,20 @@
+﻿@model notTHATkindOfDungeon.Models.CreateGear
+@{
+    ViewData["Title"] = "Item Successfully Added";
+}
+
+<h2>Item Added!</h2>
+
+<p>New Item Details:
+    <ul>
+        <li>Item Name: @Model.ItemName</li>
+        <li>Item Description: @Model.ItemDescription</li>
+        <li>Minimum Score Requirement: @Model.ScoreRequirement</li>
+        <li>Item Type: @Model.ItemType</li>
+        <li>Attack: @Model.Attack</li>
+        <li>Defense: @Model.Defense</li>
+        <li>Healing Power: @Model.HealingPower</li>
+        <li>Inventory Increase: @Model.InventoryIncrease</li>
+    </ul></p>
+<p>Click <a asp-action="ShowShop">here</a> to see full shop inventory.</p>
+<p>Click <a asp-action="CreateGearForm">here</a> to add more items to shop.</p>
