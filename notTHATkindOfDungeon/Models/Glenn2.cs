@@ -9,5 +9,7 @@ namespace notTHATkindOfDungeon.Models
     {
         // This is a sample file
 
+        // Insightful comment
+
     }
 }
