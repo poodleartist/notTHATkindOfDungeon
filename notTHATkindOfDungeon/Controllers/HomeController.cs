@@ -17,14 +17,14 @@ namespace notTHATkindOfDungeon.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "This is about notTHATkindOfDungeon. Don't blame us for the title's warning.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "This is a Contact Page, might not be what you're looking for however it's notThatkindofContactPage. hahaha";
 
             return View();
         }
