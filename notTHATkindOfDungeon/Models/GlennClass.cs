@@ -7,6 +7,6 @@ namespace notTHATkindOfDungeon.Models
 {
     public class GlennClass
     {
-        // Good stuff goes here
+        // Good stuff goes here.
     }
 }
