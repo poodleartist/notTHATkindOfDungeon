@@ -35,7 +35,7 @@ namespace notTHATkindOfDungeon
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddTransient<IGearRepository, GearRepository>();
             services.AddMvc();
         }
 

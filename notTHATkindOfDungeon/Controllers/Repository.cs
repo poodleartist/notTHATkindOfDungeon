@@ -7,14 +7,14 @@ namespace notTHATkindOfDungeon.Models
 {
     public class Repository
     {
-        private static List<CreateGear> createGears = new List<CreateGear>();
+        private static List<Gear> createGears = new List<Gear>();
 
-        public static IEnumerable<CreateGear> CreateGears
+        public static IEnumerable<Gear> CreateGears
         {
             get { return createGears; }
         }
 
-        public static void AddGear(CreateGear createGear)
+        public static void AddGear(Gear createGear)
         {
             createGears.Add(createGear);
         }

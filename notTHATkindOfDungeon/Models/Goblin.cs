@@ -96,7 +96,9 @@ namespace notTHATkindOfDungeon.Models
             // Gold
             MinGold = 2;
             MaxGold = 8;
-            GoldDropped = dropGold(MinGold, MaxGold);
+         //   commented out the following line as the method "dropGold" didn't exist in this context
+         //     and i couldn't run the project. 
+         //   GoldDropped = dropGold(MinGold, MaxGold);
             // Misc.
             Description  =  "A crafty, mischevious creature known for its avarice—very green.";
             Name         =  "";

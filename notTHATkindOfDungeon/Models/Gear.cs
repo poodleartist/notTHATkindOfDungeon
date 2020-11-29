@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace notTHATkindOfDungeon.Models
 {
-    public class CreateGear
-    {
+    public class Gear
+    { 
+        [Key]
+        public int ItemId { get; set; }
         [Required(ErrorMessage ="Please enter item name")]
         public string ItemName { get; set; }
         [Required(ErrorMessage ="Please enter a simple item description")]
@@ -21,4 +24,11 @@ namespace notTHATkindOfDungeon.Models
         public int? HealingPower { get; set; }
         public int? InventoryIncrease { get; set; }
     }
+
+    //public class CreateGearDbContext : DbContext
+    //{
+    //    public CreateGearDbContext()
+    //    { }
+    //    public DbSet<CreateGear> CreateGears{ get; set; }
+    //}
 }

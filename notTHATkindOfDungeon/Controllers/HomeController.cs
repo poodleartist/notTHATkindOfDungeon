@@ -10,6 +10,10 @@ namespace notTHATkindOfDungeon.Controllers
 {
     public class HomeController : Controller
     {
+        // Following code is to try to get the gear to save in the database
+        // Once it's working, I might move to a separate "GearController"
+       //private CreateGearDbContext db = new CreateGearDbContext();
+       
         public IActionResult Index()
         {
             return View();
@@ -28,19 +32,22 @@ namespace notTHATkindOfDungeon.Controllers
 
             return View();
         }
-        
+
         public IActionResult CreateGearForm()
         {
             ViewData["Message"] = "Create Gear for the shop here.";
             return View();
         }
-
-        public IActionResult AddItem(CreateGear createGear)
-        {
+        
+        public IActionResult AddItem(Gear createGear)
+        {   // the following if statement only allows items to be created
+            // if the required fields are filled out
             if (ModelState.IsValid)
             {
-                //TODO: store created gear in database
-                Repository.AddGear(createGear);
+                // now storing in database, don't need repository
+                // Repository.AddGear(createGear);
+              //  db.CreateGears.Add(createGear);
+               // db.SaveChanges();
                 return View("ItemAdded", createGear);
             }
             else
@@ -51,8 +58,15 @@ namespace notTHATkindOfDungeon.Controllers
         }
 
         public IActionResult ShowShop()
-        {
-            return View(Repository.CreateGears);
+        { // getting rid of the repository, as it resets every time you restart the program,
+          // replacing with an actual database to pull things from
+          //  return View(Repository.CreateGears);
+          //  var gear = from g in db.CreateGears
+          //             orderby g.ItemName
+          //            select g;
+          // return View(gear);
+            return View();
+
         }
 
         public IActionResult Error()
