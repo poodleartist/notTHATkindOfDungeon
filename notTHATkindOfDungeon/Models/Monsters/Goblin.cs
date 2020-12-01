@@ -7,6 +7,9 @@ namespace notTHATkindOfDungeon.Models
 {
     class Goblin : Monster
     {
+
+        // ~ Andrew J. O'Connor ~
+
         // ~ ATTACK & MISS MESSAGES (Narration) ~
         string[] missMessages =
         {
@@ -62,27 +65,27 @@ namespace notTHATkindOfDungeon.Models
         //
         //   Customizable Constructor
         public Goblin
-            ( int     goblinMaxHealth,
-              int     goblinAttack,
-              int     goblinLevel,
-              int     goblinMinGold,
-              int     goblinMaxGold,
-              int     goblinGoldDropped,
-              string  goblinDescription,
-              string  goblinName )
+            ( int     monsterMaxHealth,
+              int     monsterAttack,
+              int     monsterLevel,
+              int     monsterMinGold,
+              int     monsterMaxGold,
+              int     monsterGoldDropped,
+              string  monsterDescription,
+              string  monsterName )
             {
               // Stats
-              MaxHealth    =  goblinMaxHealth;
+              MaxHealth    =  monsterMaxHealth;
               Health       =  MaxHealth;
-              Attack       =  goblinAttack;
-              Level        =  goblinLevel;
+              Attack       =  monsterAttack;
+              Level        =  monsterLevel;
               // Gold
-              MinGold      =  goblinMinGold;
-              MaxGold      =  goblinMaxGold;
-              GoldDropped  =  goblinGoldDropped;
+              MinGold      =  monsterMinGold;
+              MaxGold      =  monsterMaxGold;
+              GoldDropped  =  monsterGoldDropped;
               // Misc.
-              Description  =  goblinDescription;
-              Name         =  goblinName;
+              Description  =  monsterDescription;
+              Name         =  monsterName;
             }
         //
         //   Default Value Constructor
@@ -96,9 +99,7 @@ namespace notTHATkindOfDungeon.Models
             // Gold
             MinGold = 2;
             MaxGold = 8;
-         //   commented out the following line as the method "dropGold" didn't exist in this context
-         //     and i couldn't run the project. 
-         //   GoldDropped = dropGold(MinGold, MaxGold);
+            GoldDropped = DropGold(MinGold, MaxGold);
             // Misc.
             Description  =  "A crafty, mischevious creature known for its avarice—very green.";
             Name         =  "";
