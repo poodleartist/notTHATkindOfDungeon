@@ -46,8 +46,7 @@ namespace notTHATkindOfDungeon.Controllers
             {
                 // now storing in database, don't need repository
                 // Repository.AddGear(createGear);
-              //  db.CreateGears.Add(createGear);
-               // db.SaveChanges();
+                
                 return View("ItemAdded", createGear);
             }
             else
