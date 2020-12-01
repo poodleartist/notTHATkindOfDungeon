@@ -7,9 +7,9 @@ namespace notTHATkindOfDungeon.Models
 {
     public class Monster
     {
-//      The monster class is the base class of all the other monster classes.
+//      The monster class is the base class of all the other monster classes
 
-
+//      ~ Andrew J. O'Connor ~
 
 //      ~ PROPERTY ~                                        ~ EXAMPLE / DESCRIPTION ~ 
 //      -----------------------------------------------------------------------------------------------------
