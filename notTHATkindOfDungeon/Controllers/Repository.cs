@@ -9,7 +9,7 @@ namespace notTHATkindOfDungeon.Models
     {
         private static List<Gear> createGears = new List<Gear>();
 
-        public static IEnumerable<Gear> CreateGears
+        public static IEnumerable<Gear> Gear
         {
             get { return createGears; }
         }

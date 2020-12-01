@@ -10,9 +10,9 @@ namespace notTHATkindOfDungeon.Controllers
 {
     public class HomeController : Controller
     {
-        // Following code is to try to get the gear to save in the database
-        // Once it's working, I might move to a separate "GearController"
-       //private CreateGearDbContext db = new CreateGearDbContext();
+       // Following code is to try to get the gear to save in the database,
+       // couldn't get it to work, so ignore the following line for now
+       // private CreateGearDbContext db = new CreateGearDbContext();
        
         public IActionResult Index()
         {
@@ -39,15 +39,15 @@ namespace notTHATkindOfDungeon.Controllers
             return View();
         }
         
-        public IActionResult AddItem(Gear createGear)
+        public IActionResult AddItem(Gear Gear)
         {   // the following if statement only allows items to be created
             // if the required fields are filled out
             if (ModelState.IsValid)
             {
-                // now storing in database, don't need repository
-                // Repository.AddGear(createGear);
-                
-                return View("ItemAdded", createGear);
+                // put it back to repository until I can figure out adding to DB
+                 Repository.AddGear(Gear);
+              
+                return View("ItemAdded", Gear);
             }
             else
             {
@@ -57,14 +57,12 @@ namespace notTHATkindOfDungeon.Controllers
         }
 
         public IActionResult ShowShop()
-        { // getting rid of the repository, as it resets every time you restart the program,
-          // replacing with an actual database to pull things from
-          //  return View(Repository.CreateGears);
-          //  var gear = from g in db.CreateGears
-          //             orderby g.ItemName
-          //            select g;
+        { // Have it set back to the repository until I can get it to pull from Gears database
+            return View(Repository.Gear);
+            //Ignore the following 3 lines for now.
+            //var gear =
           // return View(gear);
-            return View();
+           // return View();
 
         }
 
