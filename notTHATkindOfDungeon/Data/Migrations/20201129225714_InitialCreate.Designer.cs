@@ -11,9 +11,10 @@ using System;
 namespace notTHATkindOfDungeon.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201129225714_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -177,35 +178,6 @@ namespace notTHATkindOfDungeon.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("notTHATkindOfDungeon.Models.Gear", b =>
-                {
-                    b.Property<int>("ItemId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("Attack");
-
-                    b.Property<int?>("Defense");
-
-                    b.Property<int?>("HealingPower");
-
-                    b.Property<int?>("InventoryIncrease");
-
-                    b.Property<string>("ItemDescription")
-                        .IsRequired();
-
-                    b.Property<string>("ItemName")
-                        .IsRequired();
-
-                    b.Property<string>("ItemType")
-                        .IsRequired();
-
-                    b.Property<int>("ScoreRequirement");
-
-                    b.HasKey("ItemId");
-
-                    b.ToTable("Gears");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

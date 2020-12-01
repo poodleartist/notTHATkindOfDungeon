@@ -1,4 +1,4 @@
-﻿@model IEnumerable<notTHATkindOfDungeon.Models.CreateGear>
+﻿@model IEnumerable<notTHATkindOfDungeon.Models.Gear>
 @{
     ViewData["Title"] = "Shop";
 }
@@ -12,14 +12,14 @@
             <th>Item Description</th>
             <th>Score Requirement</th>
             <th>Item Type</th>
-            <th>Atack</th>
+            <th>Attack</th>
             <th>Defense</th>
             <th>Healing Power</th>
             <th>Inventory Increase</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(notTHATkindOfDungeon.Models.CreateGear g in Model){ 
+        @foreach (var g in Model){ 
         <tr>
             <td>@g.ItemName</td>
             <td>@g.ItemDescription</td>

@@ -15,6 +15,8 @@ namespace notTHATkindOfDungeon.Data
         {
         }
 
+        public DbSet<Gear> Gears { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
