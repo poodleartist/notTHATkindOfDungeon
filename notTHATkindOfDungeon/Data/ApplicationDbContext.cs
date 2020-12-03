@@ -14,7 +14,7 @@ namespace notTHATkindOfDungeon.Data
             : base(options)
         {
         }
-
+        public DbSet<Player> Players { get; set; }
         public DbSet<Gear> Gears { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

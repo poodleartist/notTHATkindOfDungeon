@@ -97,8 +97,8 @@ namespace notTHATkindOfDungeon.Models
             Attack       =  10;
             Level        =  1;
             // Gold
-            MinGold = 2;
-            MaxGold = 8;
+            MinGold = 8;
+            MaxGold = 18;
             GoldDropped = DropGold(MinGold, MaxGold);
             // Misc.
             Description  =  "A crafty, mischevious creature known for its avarice—very green.";
@@ -134,7 +134,7 @@ namespace notTHATkindOfDungeon.Models
 
 
         // ~ ATTACK FUNCTION ~
-        //   This randomly selects an attack for a Goblin to use & returns the damage.
+        //   This randomly selects an attack for a monster to use & returns the damage.
         public int UseAttack()
         {
             Random random = new Random();

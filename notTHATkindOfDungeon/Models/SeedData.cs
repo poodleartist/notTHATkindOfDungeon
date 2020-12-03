@@ -162,6 +162,121 @@ namespace notTHATkindOfDungeon.Models
                         InventoryIncrease = 15
                     }
                     );
+                
+                }
+            if (!context.Players.Any())
+            {
+                context.Players.AddRange(
+                new Player
+                {
+                    UserName = "Lydia",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                },
+                new Player
+                {
+                    UserName = "Jay",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                },
+                new Player
+                {
+                    UserName = "Andrew",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                },
+
+                new Player
+                {
+                    UserName = "NewPerson",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                },
+
+                new Player
+                {
+                    UserName = "OtherNewPerson",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                },
+
+                new Player
+                {
+                    UserName = "TestPlayer",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                },
+
+                new Player
+                {
+                    UserName = "Test2",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                },
+
+                new Player
+                {
+                    UserName = "Test3",
+                    Score = 0,
+                    GameProgress = 0,
+                    GoldPieces = 0,
+                    TotalHitpoints = 20,
+                    CurrentHitPoints = 20,
+                    TotalInventorySpaces = 5,
+                    FilledInventorySpaces = 0,
+                    Attack = 3,
+                    Defense = 3
+                }
+                );
                 context.SaveChanges();
 
             }

@@ -92,13 +92,13 @@ namespace notTHATkindOfDungeon.Models
         public Skeleton()
         {
             // Stats
-            MaxHealth = 100;
-            Health = 100;
+            MaxHealth = 105;
+            Health = 105;
             Attack = 15;
             Level = 4;
             // Gold
-            MinGold = 6;
-            MaxGold = 12;
+            MinGold = 2;
+            MaxGold = 6;
             GoldDropped = DropGold(MinGold, MaxGold);
             // Misc.
             Description = "The skeleton of a human, held together by supernatural forces.  It wields a rusty iron sword.";
@@ -116,14 +116,14 @@ namespace notTHATkindOfDungeon.Models
             int damage = random.Next(1, Attack);
             return damage;
         }
-        // Attack 2 -- SLAP Attack -- Skeleton's moderate attack.
+        // Attack 2 -- KICK Attack -- Skeleton's moderate attack.
         private int Kick()
         {
             Random random = new Random();
             int damage = random.Next(1, 5);
             return damage;
         }
-        // Attack 3 -- BITE Attack -- Skeleton's weak attack.
+        // Attack 3 -- PUNCH Attack -- Skeleton's weak attack.
         private int Punch()
         {
             Random random = new Random();
@@ -134,7 +134,7 @@ namespace notTHATkindOfDungeon.Models
 
 
         // ~ ATTACK FUNCTION ~
-        //   This randomly selects an attack for a Goblin to use & returns the damage.
+        //   This randomly selects an attack for a monster to use & returns the damage.
         public int UseAttack()
         {
             Random random = new Random();
