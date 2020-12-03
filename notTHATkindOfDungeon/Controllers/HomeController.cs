@@ -78,16 +78,7 @@ namespace notTHATkindOfDungeon.Controllers
 
         public async Task<IActionResult> ShowShop()
         {
-            return View(await _context.Gears.ToListAsync());
-            
-            
-            // Have it set back to the repository until I can get it to pull from Gears database
-            //return View(Repository.Gear);
-            //Ignore the following 3 lines for now.
-            //var gear =
-          // return View(gear);
-           // return View();
-
+            return View("~/Views/Shop/ShowShop.cshtml",await _context.Gears.ToListAsync());
         }
 
         public async Task<IActionResult> ShowPlayers()
