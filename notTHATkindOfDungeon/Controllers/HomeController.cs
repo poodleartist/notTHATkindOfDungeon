@@ -16,6 +16,7 @@ namespace notTHATkindOfDungeon.Controllers
         // Following code is to try to get the gear to save in the database,
         // couldn't get it to work, so ignore the following line for now
         private readonly ApplicationDbContext _context;
+
         private readonly IHostingEnvironment hostingEnvironment;
 
         public HomeController(ApplicationDbContext context, IHostingEnvironment hostingEnvironment)
