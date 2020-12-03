@@ -36,6 +36,7 @@ namespace notTHATkindOfDungeon
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<IGearRepository, GearRepository>();
+            services.AddTransient<IPlayerRepository, PlayerRepository>();
             services.AddMvc();
         }
 
