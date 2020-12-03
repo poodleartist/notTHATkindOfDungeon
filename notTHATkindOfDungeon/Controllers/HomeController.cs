@@ -16,6 +16,7 @@ namespace notTHATkindOfDungeon.Controllers
         // Following code is to try to get the gear to save in the database,
         // couldn't get it to work, so ignore the following line for now
         private readonly ApplicationDbContext _context;
+
         private readonly IHostingEnvironment hostingEnvironment;
 
         public HomeController(ApplicationDbContext context, IHostingEnvironment hostingEnvironment)
@@ -33,20 +34,20 @@ namespace notTHATkindOfDungeon.Controllers
         {
             ViewData["Message"] = "This is about notTHATkindOfDungeon. Don't blame us for the title's warning.";
 
-            return View();
+            return View("~/Views/AboutUs/About.cshtml");
         }
 
         public IActionResult Contact()
         {
             ViewData["Message"] = "This is a Contact Page, might not be what you're looking for however it's notThatkindofContactPage. hahaha";
 
-            return View();
+            return View("~/Views/ContactUs/Contact.cshtml");
         }
 
         public IActionResult CreateGearForm()
         {
             ViewData["Message"] = "Create Gear for the shop here.";
-            return View();
+            return View("~/Views/Gear/CreateGearForm.cshtml");
         }
         [HttpGet]
         public IActionResult AddItem()
@@ -66,12 +67,12 @@ namespace notTHATkindOfDungeon.Controllers
                 // put it back to repository until I can figure out adding to DB
                 // Repository.AddGear(Gear);
               
-                return View("ItemAdded", Gear);
+                return View("~/Views/Gear/ItemAdded.cshtml", Gear);
             }
             else
             {
                 //there is a validation error
-                return View("CreateGearForm");
+                return View("~/Views/Gear/CreateGearForm.cshtml");
             }
         }
 
