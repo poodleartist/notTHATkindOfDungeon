@@ -89,6 +89,12 @@ namespace notTHATkindOfDungeon.Controllers
 
         }
 
+        public async Task<IActionResult> ShowPlayers()
+        {
+            return View(await _context.Players.ToListAsync());
+
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

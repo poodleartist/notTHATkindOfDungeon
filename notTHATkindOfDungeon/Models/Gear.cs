@@ -25,10 +25,4 @@ namespace notTHATkindOfDungeon.Models
         public int? InventoryIncrease { get; set; }
     }
 
-    //public class CreateGearDbContext : DbContext
-    //{
-    //    public CreateGearDbContext()
-    //    { }
-    //    public DbSet<CreateGear> CreateGears{ get; set; }
-    //}
 }

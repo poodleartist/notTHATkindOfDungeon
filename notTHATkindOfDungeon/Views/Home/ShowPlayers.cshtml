@@ -1,0 +1,36 @@
+﻿@model IEnumerable<notTHATkindOfDungeon.Models.Player>
+@{
+    ViewData["Title"] = "Players";
+}
+
+<h2>Here's who's playing the game:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Choose Player</th>
+            <th>Username</th>
+            <th>Score</th>
+            <th>Gold Pieces</th>
+            <th>Total Hitpoints</th>
+            <th>Total Inventory Spaces</th>
+            <th>Attack</th>
+            <th>Defense</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+        <tr>
+            <td><form asp-action="choosePlayer" method="post"><button type="submit">Choose Player</button></form></td>
+            <td>@p.UserName</td>
+            <td>@p.Score</td>
+            <td>@p.GoldPieces</td>
+            <td>@p.TotalHitpoints</td>
+            <td>@p.TotalInventorySpaces</td>
+            <td>@p.Attack</td>
+            <td>@p.Defense</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
