@@ -10,6 +10,7 @@ namespace notTHATkindOfDungeon.Models
     {
         [Key]
         public int PlayerId { get; set; }
+        [Required(ErrorMessage = "Please enter player username")]
         public string UserName { get; set; }
         public int Score { get; set; }
         public int GameProgress { get; set; }

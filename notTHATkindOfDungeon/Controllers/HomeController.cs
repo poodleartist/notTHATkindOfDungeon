@@ -64,9 +64,7 @@ namespace notTHATkindOfDungeon.Controllers
             {
                 _context.Add(Gear);
                 await _context.SaveChangesAsync();
-                // put it back to repository until I can figure out adding to DB
-                // Repository.AddGear(Gear);
-              
+               
                 return View("~/Views/Gear/ItemAdded.cshtml", Gear);
             }
             else
@@ -86,7 +84,27 @@ namespace notTHATkindOfDungeon.Controllers
             return View(await _context.Players.ToListAsync());
 
         }
+        [HttpGet]
+        public IActionResult AddPlayer()
+        {
+            return View("AddPlayer");
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddPlayer(Player Player)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(Player);
+                await _context.SaveChangesAsync();
 
+                return View("~/Views/Home/ShowPlayers.cshtml",Player);
+
+            }
+            else
+            {
+                return View("~/Views/Home/AddPlayer.cshtml");
+            }
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

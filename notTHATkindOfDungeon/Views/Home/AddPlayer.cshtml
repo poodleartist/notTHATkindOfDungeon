@@ -1,0 +1,17 @@
+﻿@model notTHATkindOfDungeon.Models.Player;
+
+    @{
+        ViewData["Title"] = "Add a new Player";
+    }
+<body>
+    <h2>Add a new Player</h2>
+
+    <form asp-action="AddPlayer" method="post">
+
+        <p>
+            <input asp-for="UserName" type="text" />
+        </p>
+        <button type="submit">Add your player</button>
+
+    </form>
+</body>
