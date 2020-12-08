@@ -111,20 +111,20 @@ namespace notTHATkindOfDungeon.Controllers
         }
 
         //This is the beginning of where the game logic starts
-        public IActionResult ChoosePlayer(Player player)
+        public async Task<IActionResult> ChoosePlayerAsync(string activePlayer)
         {
-            
+            Player player = await _context.Players.SingleOrDefaultAsync(p => p.UserName == activePlayer);
             int playerProgress = player.GameProgress;
             
             if(playerProgress == 0)
             {
                 ViewData["Title"] = "In the beginning....";
-                return View("~Views/Game/TwoOptions.cshtml", player);
+                return View("~/Views/Home/TwoOptions.cshtml", player);
             }
             else
             {
 
-                return View("~Views/Game/TwoOptions.cshtml", player);
+                return View("~/Views/Home/TwoOptions.cshtml", player);
             }
 
         }
