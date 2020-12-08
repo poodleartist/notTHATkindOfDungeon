@@ -109,5 +109,26 @@ namespace notTHATkindOfDungeon.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //This is the beginning of where the game logic starts
+        public IActionResult ChoosePlayer(Player player)
+        {
+            
+            int playerProgress = player.GameProgress;
+            
+            if(playerProgress == 0)
+            {
+                ViewData["Title"] = "In the beginning....";
+                return View("~Views/Game/TwoOptions.cshtml", player);
+            }
+            else
+            {
+
+                return View("~Views/Game/TwoOptions.cshtml", player);
+            }
+
+        }
+
+
     }
 }

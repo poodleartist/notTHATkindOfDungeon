@@ -1,0 +1,22 @@
+﻿
+    @{
+        Player player = (Player)ViewData["playerInfo"];
+        ViewData["Title"] = @ViewData["Title"];
+    }
+
+    <h2></h2>
+    <h2>@ViewData["heading"]</h2>
+<h3>
+    You have currentHP out of totalHP
+</h3>
+
+    <p>
+        @ViewData["paragraph"]
+    </p>
+
+    <p>What do you want to do?</p>
+
+    <form asp-action="option1"><button type="submit">@ViewData["option1"]</button></form>
+    <form asp-action="option2"><button type="submit">@ViewData["option2"]</button></form>
+    <br />
+    <form asp-action="exitGame"><button type="submit">Exit Game</button></form>
