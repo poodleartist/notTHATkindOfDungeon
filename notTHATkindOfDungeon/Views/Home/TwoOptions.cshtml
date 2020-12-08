@@ -1,22 +1,23 @@
-﻿
-    @{
-        Player player = (Player)ViewData["playerInfo"];
-        ViewData["Title"] = @ViewData["Title"];
-    }
+﻿@model notTHATkindOfDungeon.Models.Player
+@{
+    // Player player = (Player)ViewData["playerInfo"];
+    ViewData["Title"] = @ViewData["Title"];
 
-    <h2></h2>
-    <h2>@ViewData["heading"]</h2>
+}
+
+<h2></h2>
+<h2>@ViewData["heading"]</h2>
+
+<p>
+    @ViewData["paragraph"]
+</p>
+
+<p>What do you want to do?</p>
+
+<form asp-action="PlayGameAsync"><input name="choice" type="hidden" value="1" /><button type="submit">@ViewData["option1"]</button></form>
+<form asp-action="PlayGameAsync"><input name="choice" type="hidden" value="2" /><button type="submit">@ViewData["option2"]</button></form>
+<br />
+<form asp-action="exitGame"><button type="submit">Exit Game</button></form>
 <h3>
-    You have currentHP out of totalHP
+    You have @Html.DisplayFor(model => model.CurrentHitPoints) out of @Html.DisplayFor(model => model.TotalHitpoints) life points left.
 </h3>
-
-    <p>
-        @ViewData["paragraph"]
-    </p>
-
-    <p>What do you want to do?</p>
-
-    <form asp-action="option1"><button type="submit">@ViewData["option1"]</button></form>
-    <form asp-action="option2"><button type="submit">@ViewData["option2"]</button></form>
-    <br />
-    <form asp-action="exitGame"><button type="submit">Exit Game</button></form>

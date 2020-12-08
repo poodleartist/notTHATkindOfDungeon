@@ -21,7 +21,7 @@
         @foreach (var p in Model)
         {
         <tr>
-            <td><form asp-action="ChoosePlayerAsync" method="post"><input type="hidden" name="activePlayer" id="activePlayer" value="@p.UserName" /><button type="submit">Play Game</button></form></td>
+            <td><form asp-action="PlayGameAsync" method="post"><input type="hidden" name="activePlayer" id="activePlayer" value="@p.UserName" /><button type="submit">Play Game</button></form></td>
             <td>@p.UserName</td>
             <td>@p.Score</td>
             <td>@p.GoldPieces</td>
