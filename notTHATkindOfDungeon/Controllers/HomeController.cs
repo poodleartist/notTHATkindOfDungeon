@@ -111,48 +111,48 @@ namespace notTHATkindOfDungeon.Controllers
         }
 
         //This is the beginning of where the game logic starts
-        public async Task<IActionResult> PlayGameAsync(string activePlayer, int? choice)
-        {
-            Player player = await _context.Players.SingleOrDefaultAsync(p => p.UserName == activePlayer);
-            int playerProgress = player.GameProgress;
+        public async Task<IActionResult> PlayGameAsync(Player activePlayer, int? choice)
+        { 
+            int playerProgress = activePlayer.GameProgress;
             
             if(playerProgress == 0)
             {
-                player.GameProgress = player.GameProgress++;
-                _context.Update(player);
+                activePlayer.GameProgress++;
+                _context.Update(activePlayer);
                 await _context.SaveChangesAsync();
                 ViewData["Title"] = "In the beginning....";
                 ViewData["heading"] = "Late one night...";
-                ViewData["paragraph"] = "The air around you is chilled, riddled with mist, and perhaps a hint of magic. Your shoes are on teh brink of slipping on the rain coated sidewalk. The view around you painted by the neon lights of the shops and bars. Surrounded by an array of shops closed early, (due to reduced hours), you stumble your way along. Your mind weak from sleep deprivation and caffeine withdrawl. In the darkness, a faint red light emerges in the distance. You find yourself intrigued. You've walked this path every night for months, yet this blood red glow has no place in your memory. The next two steps allow you to see that the glow is a neon sign.";
+                ViewData["paragraph"] = "The air around you is chilled, riddled with mist, and perhaps a hint of magic. Your shoes are on the brink of slipping on the rain coated sidewalk. The view around you painted by the neon lights of the shops and bars. Surrounded by an array of shops closed early, (due to reduced hours), you stumble your way along. Your mind weak from sleep deprivation and caffeine withdrawl. In the darkness, a faint red light emerges in the distance. You find yourself intrigued. You've walked this path every night for months, yet this blood red glow has no place in your memory. The next two steps allow you to see that the glow is a neon sign.";
                 ViewData["option1"] = "Turn around, walk away quickly.";
                 ViewData["option2"] = "Read the sign.";
-                return View("~/Views/Home/TwoOptions.cshtml", player);
+                ViewData["activePlayer"] = activePlayer;
+                return View("~/Views/Home/TwoOptions.cshtml", activePlayer);
             }
-            else if (player.GameProgress == 1)
+            else if (activePlayer.GameProgress == 1)
             {
                 if (choice == 1)
                 {
-                    player.GameProgress = player.GameProgress++;
-                    _context.Update(player);
+                    activePlayer.GameProgress = activePlayer.GameProgress++;
+                    _context.Update(activePlayer);
                     await _context.SaveChangesAsync();
                     ViewData["Title"] = "In the beginning....";
                     ViewData["heading"] = "You turn to leave";
                     ViewData["paragraph"] = "For a long moment you stand with your back to the sign. Urging yourself to walk away. Who cares if there's a new place you've never seen before. It's late, cold, wet, and you should hurry home. But still you stand there-unable to leave. Finally you turn around and inspect the sign.";
                     ViewData["option1"] = "Read the sign.";
                     ViewData["option2"] = "Read the sign in a funny accent in your head.";
-                    return View("~/Views/Home/TwoOptions.cshtml", player);
+                    return View("~/Views/Home/TwoOptions.cshtml", activePlayer);
                 }
                 else if (choice == 2)
                 {
-                    player.GameProgress = player.GameProgress+2;
-                    _context.Update(player);
+                    activePlayer.GameProgress = activePlayer.GameProgress+2;
+                    _context.Update(activePlayer);
                     await _context.SaveChangesAsync();
                     ViewData["Title"] = "In the beginning....";
                     ViewData["heading"] = "The Dungeon";
                     ViewData["paragraph"] = "The medieval style lettering simply reads \'The Dungeon\'. Beneath these words there shines an arrow directing your attention to a stairway leading to underground cafes and shops. You peer down the stairs and find a similar sign, though bigger, perhaps redundant and pointless, indicating the entrance to the Dungeon is the first door at the bottom of the stairs. It now appears to be a nightclub...";
                     ViewData["option1"] = "Turn around, walk away for real.";
                     ViewData["option2"] = "Walk down the stairs, appease your curiousity.";
-                    return View("~/Views/Home/TwoOptions.cshtml", player);
+                    return View("~/Views/Home/TwoOptions.cshtml", activePlayer);
                 }
                 else
                 {
@@ -161,7 +161,7 @@ namespace notTHATkindOfDungeon.Controllers
                     ViewData["paragraph"] = "The air around you is chilled, riddled with mist, and perhaps a hint of magic. Your shoes are on teh brink of slipping on the rain coated sidewalk. The view around you painted by the neon lights of the shops and bars. Surrounded by an array of shops closed early, (due to reduced hours), you stumble your way along. Your mind weak from sleep deprivation and caffeine withdrawl. In the darkness, a faint red light emerges in the distance. You find yourself intrigued. You've walked this path every night for months, yet this blood red glow has no place in your memory. The next two steps allow you to see that the glow is a neon sign.";
                     ViewData["option1"] = "Turn around, walk away quickly.";
                     ViewData["option2"] = "Read the sign.";
-                    return View("~/Views/Home/TwoOptions.cshtml", player);
+                    return View("~/Views/Home/TwoOptions.cshtml", activePlayer);
 
                 }
 
@@ -169,7 +169,7 @@ namespace notTHATkindOfDungeon.Controllers
             {
                 ViewData["heading"] = "Something went wrong.";
                 ViewData["paragraph"] = "This isn't implemented yet.";
-                return View("~/Views/Home/TwoOptions.cshtml", player);
+                return View("~/Views/Home/TwoOptions.cshtml", activePlayer);
             }
 
         }

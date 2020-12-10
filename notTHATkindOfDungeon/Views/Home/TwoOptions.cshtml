@@ -1,11 +1,11 @@
 ﻿@model notTHATkindOfDungeon.Models.Player
 @{
-    // Player player = (Player)ViewData["playerInfo"];
+    Player activePlayer = (Player)ViewData["activePlayer"];
     ViewData["Title"] = @ViewData["Title"];
-
+    
 }
 
-<h2></h2>
+<h2>You are playing as @activePlayer</h2>
 <h2>@ViewData["heading"]</h2>
 
 <p>
@@ -14,10 +14,10 @@
 
 <p>What do you want to do?</p>
 
-<form asp-action="PlayGameAsync"><input name="choice" type="hidden" value="1" /><button type="submit">@ViewData["option1"]</button></form>
-<form asp-action="PlayGameAsync"><input name="choice" type="hidden" value="2" /><button type="submit">@ViewData["option2"]</button></form>
+<form asp-action="PlayGameAsync"><input name="choice" type="hidden" value="1" /><input type="hidden" name="activePlayer" id="activePlayer" value="@activePlayer" /><button type="submit">@ViewData["option1"]</button></form>
+<form asp-action="PlayGameAsync"><input name="choice" type="hidden" value="2" /><input type="hidden" name="activePlayer" id="activePlayer" value="@activePlayer" /><button type="submit">@ViewData["option2"]</button></form>
 <br />
 <form asp-action="exitGame"><button type="submit">Exit Game</button></form>
 <h3>
-    You have @Html.DisplayFor(model => model.CurrentHitPoints) out of @Html.DisplayFor(model => model.TotalHitpoints) life points left.
+    You have @activePlayer.CurrentHitPoints out of @activePlayer.TotalHitpoints life points left.
 </h3>
