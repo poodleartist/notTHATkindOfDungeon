@@ -149,7 +149,7 @@ namespace notTHATkindOfDungeon.Controllers
                     await _context.SaveChangesAsync();
                     ViewData["Title"] = "In the beginning....";
                     ViewData["heading"] = "The Dungeon";
-                    ViewData["paragraph"] = "The medieval style lettering simply reads \'The Dungeon\'. Beneath these words there shines an arrow directing your attention to a stairway leading to underground cafes and shops. You peer down the stairs and find a similar sign, though bigger, perhaps redundant and pointless, indicating the entrance to the Dungeon is the first door at the bottom of the stairs. It now appears to be a nightclub...";
+                    ViewData["paragraph"] = "The medieval style lettering simply reads 'The Dungeon'. Beneath these words there shines an arrow directing your attention to a stairway leading to underground cafes and shops. You peer down the stairs and find a similar sign, though bigger, perhaps redundant and pointless, indicating the entrance to the Dungeon is the first door at the bottom of the stairs. It now appears to be a nightclub...";
                     ViewData["option1"] = "Turn around, walk away for real.";
                     ViewData["option2"] = "Walk down the stairs, appease your curiousity.";
                     return View("~/Views/Home/TwoOptions.cshtml", activePlayer);
