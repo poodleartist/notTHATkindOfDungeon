@@ -8,14 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using notTHATkindOfDungeon.Data;
 using notTHATkindOfDungeon.Models;
-using notTHATkindOfDungeon.Models.Sections;
 
 namespace notTHATkindOfDungeon.Controllers
 {
     public class HomeController : Controller
     {
-       
-
         // Following code is to try to get the gear to save in the database,
         // couldn't get it to work, so ignore the following line for now
         private readonly ApplicationDbContext _context;
@@ -116,7 +113,12 @@ namespace notTHATkindOfDungeon.Controllers
         //This is the beginning of where the game logic starts
         public async Task<IActionResult> PlayGameAsync(Player activePlayer, int? choice)
         {
-           // Introduction.PrepareSection();
+            // Constructs the IntroSection and assigns it to "intro".
+            IntroSection intro = new IntroSection();
+            // This should be how to get values from the scene properties.
+            ViewData["paragraph"] = intro.getIntroScene(0).MainParagraph;
+
+
             int playerProgress = activePlayer.GameProgress;
             
             if(playerProgress == 0)
