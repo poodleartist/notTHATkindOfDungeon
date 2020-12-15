@@ -112,7 +112,13 @@ namespace notTHATkindOfDungeon.Controllers
 
         //This is the beginning of where the game logic starts
         public async Task<IActionResult> PlayGameAsync(Player activePlayer, int? choice)
-        { 
+        {
+            // Constructs the IntroSection and assigns it to "intro".
+            IntroSection intro = new IntroSection();
+            // This should be how to get values from the scene properties.
+            ViewData["paragraph"] = intro.getIntroScene(0).MainParagraph;
+
+
             int playerProgress = activePlayer.GameProgress;
             
             if(playerProgress == 0)

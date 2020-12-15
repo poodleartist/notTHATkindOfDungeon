@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace notTHATkindOfDungeon.Models.Sections
+namespace notTHATkindOfDungeon.Models
 {
-
-
-
-    public class Introduction
+    public class IntroSection : Models.Sections.Section
     {
-        Scene[] introScenes;
+        // Declare empty array of scenes.
+        public Scene[] introScenes = { };
 
-        public Introduction CreateIntroduction()
+
+        // Returns a specific scene.
+        public Scene getIntroScene(int sceneNumber)
         {
+            return introScenes[sceneNumber];
+        }
 
 
+        // Constructor
+        public IntroSection()
+        {
             SectionName = "In the Beginning...";
             SectionNumber = 0;
 
@@ -150,8 +155,6 @@ namespace notTHATkindOfDungeon.Models.Sections
             introX.Prompt = "";
             introScenes[X] = introX;
             */
-
-            return this;
         }
     }
 }
