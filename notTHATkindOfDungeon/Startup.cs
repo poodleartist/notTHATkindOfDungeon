@@ -11,11 +11,12 @@ using Microsoft.Extensions.DependencyInjection;
 using notTHATkindOfDungeon.Data;
 using notTHATkindOfDungeon.Models;
 using notTHATkindOfDungeon.Services;
+using notTHATkindOfDungeon.Models.Sections;
 
 namespace notTHATkindOfDungeon
 {
     public class Startup
-    {
+    { 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -65,6 +66,7 @@ namespace notTHATkindOfDungeon
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             SeedData.EnsurePopulated(app);
+          
         }
     }
 }
