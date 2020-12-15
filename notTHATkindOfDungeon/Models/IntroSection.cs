@@ -8,7 +8,7 @@ namespace notTHATkindOfDungeon.Models
     public class IntroSection : Models.Sections.Section
     {
         // Declare empty array of scenes.
-        public Scene[] introScenes = { };
+        public Scene[] introScenes= new Scene[30];
 
 
         // Returns a specific scene.
